@@ -1,0 +1,10 @@
+.calendar_day {
+  display:flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.daily_notes {
+  display:flex;
+  flex-direction: column;
+}

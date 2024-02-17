@@ -1,9 +1,10 @@
 import CalendarComponent from "../components/CalendarComponent/CalendarComponent";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CalendarPage = () => {
+  const navigate = useNavigate();
   const [dateValue, setDateValue] = useState(new Date());
-  //const [dateClickCounter, setDateClickCounter] = useState(0);
   
 
   const handleChangeDate = (e) => {
@@ -11,6 +12,8 @@ const CalendarPage = () => {
     const currentDateMillis = dateValue.getTime();
     if(selectedDateMillis === currentDateMillis) {
       console.log("double click");
+      const clickedDate = `${dateValue.getDate()}.${dateValue.getMonth() + 1}.${dateValue.getFullYear()}`;
+      navigate(`/calendar/${clickedDate}`);
     }
     setDateValue(e);
 
