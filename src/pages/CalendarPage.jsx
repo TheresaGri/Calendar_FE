@@ -26,7 +26,6 @@ const CalendarPage = () => {
         value={dateValue}
         onChange={handleChangeDate}
       ></CalendarComponent>
-      <button onDoubleClick={() => console.log("double click")}>click twice</button>
     </div>
   );
 };
